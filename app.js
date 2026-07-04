@@ -238,15 +238,21 @@ function trainingContent(items) {
   const chunks = [];
   let imageBuffer = [];
 
+  function trainingImage(image) {
+    return `
+      <figure class="content-image">
+        <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" />
+        ${image.caption ? `<figcaption>${escapeHtml(image.caption)}</figcaption>` : ""}
+      </figure>
+    `;
+  }
+
   function flushImages() {
     if (!imageBuffer.length) return;
     chunks.push(`
       <div class="${imageBuffer.length > 2 ? "image-grid four" : "image-pair"}">
         ${imageBuffer
-          .map(
-            (image) =>
-              `<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" />`,
-          )
+          .map((image) => trainingImage(image))
           .join("")}
       </div>
     `);
@@ -349,7 +355,7 @@ function finalView() {
           return `
             <article class="solution-panel">
               <h2>${escapeHtml(solution.title)}</h2>
-              <p class="legend-copy">Each image is labeled with its original question number and correct classification.</p>
+              <p class="legend-copy">Each image is labeled with its original question number, correct classification, and recovered source/model caption.</p>
               <div class="solution-legend" aria-label="Classification legend">
                 <span><i class="legend-dot real"></i>Real</span>
                 <span><i class="legend-dot ai"></i>AI-generated</span>
@@ -359,12 +365,14 @@ function finalView() {
                   .map((image, imageIndex) => {
                     const question = sourceTest.questions[imageIndex];
                     const answer = question?.answer || "";
+                    const sourceCaption = image.caption || "";
                     return `
                       <figure class="solution-card ${answerKind(answer)}">
-                        <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" />
+                        <img src="${escapeHtml(image.src)}" alt="${escapeHtml(sourceCaption || image.alt)}" />
                         <figcaption>
                           <span>${escapeHtml(question?.prompt.split(".")[0] || `#${imageIndex + 1}`)}</span>
                           <strong>${escapeHtml(answer)}</strong>
+                          ${sourceCaption ? `<em>${escapeHtml(sourceCaption)}</em>` : ""}
                         </figcaption>
                       </figure>
                     `;

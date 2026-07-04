@@ -4,7 +4,6 @@ window.SURVEY_DATA = {
   "description": "Welcome to my research study! This project investigates human ability to distinguish between human-made and AI-generated images. Your participation will help me better understand digital literacy trends.",
   "expectations": [
     "Duration: Approx. 15 minutes",
-    "Tasks: You will complete a brief demographic questionnaire and evaluate two separate sets of images.",
     "Equipment: A digital device with a decently sized screen (smartphone, tablet, laptop, desktop computer,…). For the best experience, I recommend completing this survey on a laptop or desktop computer."
   ],
   "authorship": "This survey is conducted by Janna Koppenwallner, as part of the master's program Human Centered Computing at the University of Applied Sciences Hagenberg, Austria. If you have any questions or would like to request the final findings of this study, please contact me at: s2410745010@students.fh-hagenberg.at",
@@ -604,7 +603,8 @@ window.SURVEY_DATA = {
           {
             "src": "assets/033-Screenshot-2026-06-30-at-10.40.16.png",
             "source": "https://storage.tally.so/c95fad12-306e-49ff-be99-3a42d29265ff/Screenshot-2026-06-30-at-10.40.16.png",
-            "alt": "Screenshot-2026-06-30-at-10.40.16.png"
+            "alt": "Screenshot-2026-06-30-at-10.40.16.png",
+            "caption": "Save the image in question, click on the little camera icon, and upload your image."
           }
         ]
       },
@@ -658,52 +658,62 @@ window.SURVEY_DATA = {
         {
           "src": "assets/044-PreT_01.jpg",
           "source": "https://storage.tally.so/cfc8a5b8-b85f-4164-a8f0-d542d585422a/PreT_01.jpg",
-          "alt": "PreT_01.jpg"
+          "alt": "PreT_01.jpg",
+          "caption": "AI (ChatGPT)"
         },
         {
           "src": "assets/045-PreT_02.jpg",
           "source": "https://storage.tally.so/0ea3b6bb-9af7-409e-868d-338cb4f0f2e1/PreT_02.jpg",
-          "alt": "PreT_02.jpg"
+          "alt": "PreT_02.jpg",
+          "caption": "REAL - Battle of Hill 70 by William Rider-Rider (Wikimedia Commons)"
         },
         {
           "src": "assets/046-PreT_03.jpg",
           "source": "https://storage.tally.so/4cf0e87d-a708-4531-b11b-12f1553f393b/PreT_03.jpg",
-          "alt": "PreT_03.jpg"
+          "alt": "PreT_03.jpg",
+          "caption": "AI (Raphael.ai)"
         },
         {
           "src": "assets/047-PreT_04.jpg",
           "source": "https://storage.tally.so/811fadf8-c30b-49af-a990-53859bb698e1/PreT_04.jpg",
-          "alt": "PreT_04.jpg"
+          "alt": "PreT_04.jpg",
+          "caption": "AI (Nano Banana - Google Gemini)"
         },
         {
           "src": "assets/048-PreT_05_2.jpg",
           "source": "https://storage.tally.so/a64a0060-e14c-4ab3-b822-5de6e16a5453/PreT_05_2.jpg",
-          "alt": "PreT_05_2.jpg"
+          "alt": "PreT_05_2.jpg",
+          "caption": "REAL - Brugge by Janna Sophia"
         },
         {
           "src": "assets/049-PreT_06.jpg",
           "source": "https://storage.tally.so/1c8e76a8-4018-428b-8966-0446ba90353c/PreT_06.jpg",
-          "alt": "PreT_06.jpg"
+          "alt": "PreT_06.jpg",
+          "caption": "AI (ChatGPT)"
         },
         {
           "src": "assets/050-PreT_07.jpg",
           "source": "https://storage.tally.so/099fe1f8-1811-4d10-9c4d-574baf3908f8/PreT_07.jpg",
-          "alt": "PreT_07.jpg"
+          "alt": "PreT_07.jpg",
+          "caption": "AI (Raphael.ai)"
         },
         {
           "src": "assets/051-PreT_08.jpg",
           "source": "https://storage.tally.so/6c9b7397-acea-4eb5-b30b-dfc7704b5e82/PreT_08.jpg",
-          "alt": "PreT_08.jpg"
+          "alt": "PreT_08.jpg",
+          "caption": "REAL - Space Shuttle Endeavour in Los Angeles by Pedro Szekely (Wikimedia Commons)"
         },
         {
           "src": "assets/052-PreT_09.jpg",
           "source": "https://storage.tally.so/b5202328-5291-405a-9a38-b8166ce1172c/PreT_09.jpg",
-          "alt": "PreT_09.jpg"
+          "alt": "PreT_09.jpg",
+          "caption": "REAL - The Art of Painting by Johannes Vermeer (Wikimedia Commons)"
         },
         {
           "src": "assets/053-PreT_10.jpg",
           "source": "https://storage.tally.so/2cfd92fe-d438-4d06-bf72-c81d0d7a3fee/PreT_10.jpg",
-          "alt": "PreT_10.jpg"
+          "alt": "PreT_10.jpg",
+          "caption": "AI (Nano Banana - Google Gemini)"
         }
       ]
     },
@@ -713,52 +723,62 @@ window.SURVEY_DATA = {
         {
           "src": "assets/054-PosT_01.jpg",
           "source": "https://storage.tally.so/85a43557-ff8f-4446-b8f0-6450c334de11/PosT_01.jpg",
-          "alt": "PosT_01.jpg"
+          "alt": "PosT_01.jpg",
+          "caption": "AI (Raphael.ai)"
         },
         {
           "src": "assets/055-PosT_02.jpg",
           "source": "https://storage.tally.so/dbad7bf0-d5bb-491b-936f-eaa52cee224c/PosT_02.jpg",
-          "alt": "PosT_02.jpg"
+          "alt": "PosT_02.jpg",
+          "caption": "REAL - The Throne of Dali by Alexey Akindinov (Wikimedia Commons)"
         },
         {
           "src": "assets/056-PosT_03.jpg",
           "source": "https://storage.tally.so/b6b2ed72-7533-44f2-8dcf-dccca94592ec/PosT_03.jpg",
-          "alt": "PosT_03.jpg"
+          "alt": "PosT_03.jpg",
+          "caption": "REAL -  Martin Luther King Jr. by Gene Herrick (Wikimedia Commons)"
         },
         {
           "src": "assets/057-PosT_04.jpg",
           "source": "https://storage.tally.so/c61e856a-a60e-4a0e-aba9-be99ddf222b1/PosT_04.jpg",
-          "alt": "PosT_04.jpg"
+          "alt": "PosT_04.jpg",
+          "caption": "AI (ChatGPT)"
         },
         {
           "src": "assets/058-PosT_05.jpg",
           "source": "https://storage.tally.so/dad7418d-5e06-4f63-9f15-bdbc837e0ce4/PosT_05.jpg",
-          "alt": "PosT_05.jpg"
+          "alt": "PosT_05.jpg",
+          "caption": "AI (Chat GPT)"
         },
         {
           "src": "assets/059-PosT_06.jpg",
           "source": "https://storage.tally.so/d4fc1206-92a4-44cf-ab31-d54618ee71c9/PosT_06.jpg",
-          "alt": "PosT_06.jpg"
+          "alt": "PosT_06.jpg",
+          "caption": "AI (Nano Banana - Google Gemini)"
         },
         {
           "src": "assets/060-PosT_07.jpg",
           "source": "https://storage.tally.so/77c63513-e28c-4034-a1c1-9c034dbbe869/PosT_07.jpg",
-          "alt": "PosT_07.jpg"
+          "alt": "PosT_07.jpg",
+          "caption": "AI (Nano Banana - Google Gemini)"
         },
         {
           "src": "assets/061-PosT_08.jpg",
           "source": "https://storage.tally.so/20a7aa95-090f-4707-a742-8f4e6d01c77d/PosT_08.jpg",
-          "alt": "PosT_08.jpg"
+          "alt": "PosT_08.jpg",
+          "caption": "AI (Raphael.ai)"
         },
         {
           "src": "assets/062-PosT_09_2.jpg",
           "source": "https://storage.tally.so/ba7c1386-7e2e-4c24-8f8b-563c5540c387/PosT_09_2.jpg",
-          "alt": "PosT_09_2.jpg"
+          "alt": "PosT_09_2.jpg",
+          "caption": "REAL - Boats on Korčula by Janna Sophia"
         },
         {
           "src": "assets/063-PosT_10.jpg",
           "source": "https://storage.tally.so/41d20b8c-19b4-4ac0-9143-cbfceb091b73/PosT_10.jpg",
-          "alt": "PosT_10.jpg"
+          "alt": "PosT_10.jpg",
+          "caption": "REAL - California Wildfires by Daria Devyatkina, CC BY 2.0"
         }
       ]
     }

@@ -392,6 +392,18 @@ h3 {
   margin: 0;
 }
 
+.content-image {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+}
+
+.content-image figcaption {
+  color: var(--text-faint);
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
 .image-pair,
 .image-grid {
   display: grid;
@@ -536,12 +548,12 @@ h3 {
 
 .solution-card figcaption {
   display: grid;
-  gap: 3px;
+  gap: 4px;
   margin-top: 8px;
-  min-height: 42px;
+  min-height: 72px;
   color: var(--text-soft);
   font-size: 0.78rem;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .solution-card figcaption span {
@@ -555,6 +567,12 @@ h3 {
   padding: 3px 8px;
   font-size: 0.76rem;
   font-weight: 700;
+}
+
+.solution-card figcaption em {
+  color: var(--text-soft);
+  font-style: normal;
+  line-height: 1.35;
 }
 
 .solution-card.real figcaption strong {
