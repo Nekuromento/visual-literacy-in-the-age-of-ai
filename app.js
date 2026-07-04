@@ -93,13 +93,17 @@ function coverImages() {
   `;
 }
 
+function answerKind(value) {
+  return value === "Real" ? "real" : value === "AI-generated" ? "ai" : "";
+}
+
 function introView() {
   return `
     ${topbar()}
     <section class="wrap intro-layout">
       <div>
-        <p class="eyebrow">Survey archive</p>
         <h1>${escapeHtml(data.title)}</h1>
+        <h2 class="intro-subtitle">${escapeHtml(data.subtitle)}</h2>
         <p class="lede">${escapeHtml(data.description)}</p>
         <div class="info-band">
           <h3>What to expect:</h3>
@@ -175,7 +179,7 @@ function testView(testIndex) {
                 .map(
                   (option) => `
                     <button
-                      class="answer-button ${selected === option ? "selected" : ""}"
+                      class="answer-button ${answerKind(option)} ${selected === option ? "selected" : ""}"
                       data-action="answer"
                       data-test="${escapeHtml(test.id)}"
                       data-value="${escapeHtml(option)}"
@@ -214,29 +218,11 @@ function scoreView(testIndex) {
     ${topbar()}
     <section class="wrap">
       <article class="score-panel">
-        <span class="score-label">${escapeHtml(test.title)} score</span>
-        <div class="score-number">${score} / ${test.questions.length}</div>
+        <h2>Well done!</h2>
+        <p class="score-sentence">Your score for ${escapeHtml(test.title.toLowerCase())} is ${score} / ${test.questions.length}</p>
         <p class="body-copy">
           ${isFirst ? "The training material follows before the second round." : "Both rounds are complete. The solution images are below."}
         </p>
-        <div class="review-grid">
-          ${test.questions
-            .map((question, index) => {
-              const chosen = state.answers[test.id][index];
-              const ok = chosen === question.answer;
-              return `
-                <div class="review-row">
-                  <img src="${escapeHtml(question.image.src)}" alt="" loading="lazy" />
-                  <div>
-                    <strong>${escapeHtml(question.prompt)}</strong><br />
-                    <span>Correct: ${escapeHtml(question.answer)}</span>
-                  </div>
-                  <span class="status-chip ${ok ? "ok" : "miss"}">${ok ? "Correct" : "Missed"}</span>
-                </div>
-              `;
-            })
-            .join("")}
-        </div>
         <div class="score-actions">
           <button class="button secondary" data-action="${isFirst ? "retake-test1" : "retake-test2"}">Retake ${escapeHtml(test.title)}</button>
           <button class="button" data-action="${isFirst ? "open-training" : "open-final"}">
@@ -349,8 +335,8 @@ function finalView() {
     ${topbar()}
     <section class="wrap training-section">
       <article class="score-panel">
-        <span class="score-label">Test #2 score</span>
-        <div class="score-number">${score} / ${test2.questions.length}</div>
+        <h2>Well done!</h2>
+        <p class="score-sentence">Your score for test #2 is ${score} / ${test2.questions.length}</p>
         <p class="body-copy">Thank you for your participation!</p>
         <div class="final-actions">
           <button class="button secondary" data-action="retake-test2">Retake Test #2</button>
@@ -358,21 +344,36 @@ function finalView() {
         </div>
       </article>
       ${data.solutions
-        .map(
-          (solution) => `
+        .map((solution, solutionIndex) => {
+          const sourceTest = data.tests[solutionIndex];
+          return `
             <article class="solution-panel">
               <h2>${escapeHtml(solution.title)}</h2>
+              <p class="legend-copy">Each image is labeled with its original question number and correct classification.</p>
+              <div class="solution-legend" aria-label="Classification legend">
+                <span><i class="legend-dot real"></i>Real</span>
+                <span><i class="legend-dot ai"></i>AI-generated</span>
+              </div>
               <div class="solution-grid">
                 ${solution.images
-                  .map(
-                    (image) =>
-                      `<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" />`,
-                  )
+                  .map((image, imageIndex) => {
+                    const question = sourceTest.questions[imageIndex];
+                    const answer = question?.answer || "";
+                    return `
+                      <figure class="solution-card ${answerKind(answer)}">
+                        <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" />
+                        <figcaption>
+                          <span>${escapeHtml(question?.prompt.split(".")[0] || `#${imageIndex + 1}`)}</span>
+                          <strong>${escapeHtml(answer)}</strong>
+                        </figcaption>
+                      </figure>
+                    `;
+                  })
                   .join("")}
               </div>
             </article>
-          `,
-        )
+          `;
+        })
         .join("")}
       <p class="footer-note">Original survey source: ${escapeHtml(data.sourceUrl)}</p>
     </section>
