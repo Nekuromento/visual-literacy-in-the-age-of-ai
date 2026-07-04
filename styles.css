@@ -78,6 +78,10 @@ img {
   padding: 68px 0 88px;
 }
 
+.final-wrap {
+  --form-width: 1120px;
+}
+
 .intro-layout,
 .test-layout,
 .training-section {
@@ -275,7 +279,7 @@ h3 {
 }
 
 .question-media img {
-  max-height: 72vh;
+  max-height: none;
   object-fit: contain;
 }
 
@@ -431,9 +435,9 @@ h3 {
 
 .quiz-option-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
 }
 
 .image-option {
@@ -456,7 +460,8 @@ h3 {
 
 .image-option img {
   aspect-ratio: 1;
-  object-fit: cover;
+  object-fit: contain;
+  background: #f7f7f5;
 }
 
 .image-option span {
@@ -532,8 +537,8 @@ h3 {
 
 .solution-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 18px;
   align-items: start;
 }
 
@@ -548,12 +553,12 @@ h3 {
 
 .solution-card figcaption {
   display: grid;
-  gap: 4px;
-  margin-top: 8px;
-  min-height: 72px;
+  gap: 6px;
+  margin-top: 10px;
+  min-height: 0;
   color: var(--text-soft);
-  font-size: 0.78rem;
-  line-height: 1.25;
+  font-size: 0.9rem;
+  line-height: 1.32;
 }
 
 .solution-card figcaption span {
@@ -564,8 +569,8 @@ h3 {
 .solution-card figcaption strong {
   width: max-content;
   border-radius: 999px;
-  padding: 3px 8px;
-  font-size: 0.76rem;
+  padding: 4px 9px;
+  font-size: 0.82rem;
   font-weight: 700;
 }
 
@@ -600,13 +605,12 @@ h3 {
   .answer-grid,
   .image-pair,
   .image-grid,
-  .image-grid.four,
-  .quiz-option-grid {
+  .image-grid.four {
     grid-template-columns: 1fr;
   }
 
   .solution-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .question-actions,
@@ -619,5 +623,11 @@ h3 {
 
   .button {
     width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .quiz-option-grid {
+    grid-template-columns: 1fr;
   }
 }

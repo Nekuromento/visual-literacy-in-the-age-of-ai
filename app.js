@@ -311,7 +311,6 @@ function trainingView() {
     ${topbar()}
     <section class="wrap training-section">
       <div>
-        <p class="eyebrow">Detection training</p>
         <h2>${escapeHtml(data.training.title)}</h2>
         <p class="lede">${escapeHtml(data.training.intro)}</p>
       </div>
@@ -339,7 +338,7 @@ function finalView() {
   const score = scoreFor(test2);
   return `
     ${topbar()}
-    <section class="wrap training-section">
+    <section class="wrap training-section final-wrap">
       <article class="score-panel">
         <h2>Well done!</h2>
         <p class="score-sentence">Your score for test #2 is ${score} / ${test2.questions.length}</p>
@@ -355,7 +354,7 @@ function finalView() {
           return `
             <article class="solution-panel">
               <h2>${escapeHtml(solution.title)}</h2>
-              <p class="legend-copy">Each image is labeled with its original question number, correct classification, and recovered source/model caption.</p>
+              <p class="legend-copy">Captions under the images come from the original answer key.</p>
               <div class="solution-legend" aria-label="Classification legend">
                 <span><i class="legend-dot real"></i>Real</span>
                 <span><i class="legend-dot ai"></i>AI-generated</span>
